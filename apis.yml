@@ -5,7 +5,6 @@ type: Index
 image: https://puppet.com/sites/default/files/2021-09/puppet-logo.png
 url: https://raw.githubusercontent.com/api-evangelist/puppet/refs/heads/main/apis.yml
 tags:
-  - API
   - Automation
   - Configuration Management
   - DevOps
@@ -19,8 +18,7 @@ apis:
     name: Puppet
     description: Puppet provides infrastructure automation with trusted automation for hybrid and cloud environments.
     humanURL: https://www.puppet.com/
-    tags:
-      - API
+    tags: []
     properties:
       - type: Documentation
         url: https://www.puppet.com/docs/
