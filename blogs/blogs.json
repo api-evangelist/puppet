@@ -1,0 +1,13 @@
+{
+  "repo": "puppet",
+  "feeds": [
+    {
+      "source": "https://www.puppet.com/blog",
+      "feed_url": "https://www.puppet.com/rss.xml",
+      "saved": 10,
+      "title": "Puppet"
+    }
+  ],
+  "post_count": 10,
+  "fetched": "2026-05-03T23:35:04Z"
+}
