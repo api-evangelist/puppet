@@ -155,6 +155,12 @@ common:
     url: https://support.puppet.com/
   - type: Pricing
     url: https://www.puppet.com/pricing
+  - type: Integrations
+    url: https://www.puppet.com/integrations
+integrations:
+  - name: ServiceNow
+  - name: VMware
+  - name: Splunk
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
