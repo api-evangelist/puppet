@@ -145,11 +145,11 @@ common:
     url: https://help.puppet.com/
   - type: Blog
     url: https://www.puppet.com/blog
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://github.com/puppetlabs
   - type: Forge
     url: https://forge.puppet.com/
-  - type: Status
+  - type: StatusPage
     url: https://status.puppet.com/
   - type: Support
     url: https://support.puppet.com/
