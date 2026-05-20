@@ -139,6 +139,8 @@ apis:
       - type: Website
         url: https://forge.puppet.com/
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/puppet
   - type: Website
     url: https://www.puppet.com/
   - type: Documentation
