@@ -139,6 +139,12 @@ apis:
       - type: Website
         url: https://forge.puppet.com/
 common:
+  - type: VulnerabilityDisclosure
+    url: security/puppet-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/puppet-domain-security.yml
+  - type: Authentication
+    url: authentication/puppet-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/puppet
   - type: Website

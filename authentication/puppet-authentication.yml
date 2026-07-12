@@ -1,0 +1,18 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/puppet-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: rbacToken
+  type: apiKey
+  in: header
+  parameter: X-Authentication
+  description: |-
+    Puppet Enterprise RBAC user authentication token. May be retrieved via
+    `puppet-access show`. Required on every request.
+  sources:
+  - openapi/puppet-openapi.yml
