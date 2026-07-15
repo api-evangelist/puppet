@@ -139,6 +139,8 @@ apis:
       - type: Website
         url: https://forge.puppet.com/
 common:
+  - type: AgenticAccess
+    url: agentic-access/puppet-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/puppet-vulnerability-disclosure.yml
   - type: DomainSecurity
