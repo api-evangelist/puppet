@@ -1,0 +1,144 @@
+openapi: 3.1.0
+info:
+  title: Puppet Enterprise Orchestrator Commands Jobs API
+  version: v1
+  description: 'The Puppet Enterprise Orchestrator API enables programmatic management of
+
+    orchestrator jobs, tasks, plans, and on-demand Puppet runs across the
+
+    PE-managed estate. Requests use HTTPS on port 8143 and authenticate with a
+
+    PE RBAC user token supplied via the `X-Authentication` header.
+
+    '
+  contact:
+    name: Puppet Enterprise
+    url: https://help.puppet.com/pe/2025.10/
+servers:
+- url: https://{pe_host}:8143/orchestrator/v1
+  description: Puppet Enterprise primary server
+  variables:
+    pe_host:
+      default: pe-master.example.com
+      description: DNS name of the PE primary server.
+security:
+- rbacToken: []
+tags:
+- name: Jobs
+  description: GET endpoints that return information about known orchestrator jobs.
+paths:
+  /jobs:
+    get:
+      tags:
+      - Jobs
+      summary: List jobs
+      description: Retrieves details about all known orchestrator jobs.
+      operationId: listJobs
+      responses:
+        '200':
+          description: Collection of jobs.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /jobs/{job_id}:
+    get:
+      tags:
+      - Jobs
+      summary: Get a job
+      description: Retrieves details about a specific job.
+      operationId: getJob
+      parameters:
+      - $ref: '#/components/parameters/JobId'
+      responses:
+        '200':
+          description: Job details.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          description: Job not found.
+  /jobs/{job_id}/nodes:
+    get:
+      tags:
+      - Jobs
+      summary: List nodes for a job
+      description: Retrieves information about the nodes associated with a specific job.
+      operationId: getJobNodes
+      parameters:
+      - $ref: '#/components/parameters/JobId'
+      responses:
+        '200':
+          description: Nodes for the job.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /jobs/{job_id}/report:
+    get:
+      tags:
+      - Jobs
+      summary: Job summary report
+      description: Retrieves a summary report for the specified job.
+      operationId: getJobReport
+      parameters:
+      - $ref: '#/components/parameters/JobId'
+      responses:
+        '200':
+          description: Job report.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /jobs/{job_id}/events:
+    get:
+      tags:
+      - Jobs
+      summary: Job events
+      description: Retrieves a list of events that occurred during the specified job.
+      operationId: getJobEvents
+      parameters:
+      - $ref: '#/components/parameters/JobId'
+      responses:
+        '200':
+          description: Event list.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  responses:
+    Unauthorized:
+      description: Missing or invalid RBAC token.
+  parameters:
+    JobId:
+      name: job_id
+      in: path
+      required: true
+      description: Orchestrator job identifier.
+      schema:
+        type: string
+  securitySchemes:
+    rbacToken:
+      type: apiKey
+      in: header
+      name: X-Authentication
+      description: 'Puppet Enterprise RBAC user authentication token. May be retrieved via
+
+        `puppet-access show`. Required on every request.
+
+        '
+externalDocs:
+  description: Orchestrator API documentation
+  url: https://help.puppet.com/pe/2025.10/topics/orchestrator_api.htm
