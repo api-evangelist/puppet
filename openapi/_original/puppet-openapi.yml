@@ -1,0 +1,294 @@
+openapi: 3.1.0
+info:
+  title: Puppet Enterprise Orchestrator API
+  version: "v1"
+  description: |
+    The Puppet Enterprise Orchestrator API enables programmatic management of
+    orchestrator jobs, tasks, plans, and on-demand Puppet runs across the
+    PE-managed estate. Requests use HTTPS on port 8143 and authenticate with a
+    PE RBAC user token supplied via the `X-Authentication` header.
+  contact:
+    name: Puppet Enterprise
+    url: https://help.puppet.com/pe/2025.10/
+externalDocs:
+  description: Orchestrator API documentation
+  url: https://help.puppet.com/pe/2025.10/topics/orchestrator_api.htm
+servers:
+  - url: https://{pe_host}:8143/orchestrator/v1
+    description: Puppet Enterprise primary server
+    variables:
+      pe_host:
+        default: pe-master.example.com
+        description: DNS name of the PE primary server.
+security:
+  - rbacToken: []
+tags:
+  - name: Commands
+    description: POST endpoints that trigger orchestrator actions.
+  - name: Jobs
+    description: GET endpoints that return information about known orchestrator jobs.
+paths:
+  /command/deploy:
+    post:
+      tags: [Commands]
+      summary: Run Puppet on demand
+      description: Executes a Puppet run on the specified scope of nodes.
+      operationId: commandDeploy
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommandRequest'
+      responses:
+        "202":
+          $ref: '#/components/responses/JobAccepted'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+  /command/task:
+    post:
+      tags: [Commands]
+      summary: Run a task
+      description: Executes a Puppet task across the specified nodes.
+      operationId: commandTask
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommandRequest'
+      responses:
+        "202":
+          $ref: '#/components/responses/JobAccepted'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+  /command/task_target:
+    post:
+      tags: [Commands]
+      summary: Create a task target
+      description: Defines a task and node/group target combination for privilege-escalated execution.
+      operationId: commandTaskTarget
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommandRequest'
+      responses:
+        "200":
+          description: Task target created.
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+  /command/plan_run:
+    post:
+      tags: [Commands]
+      summary: Run a plan
+      description: Executes a Puppet plan.
+      operationId: commandPlanRun
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommandRequest'
+      responses:
+        "202":
+          $ref: '#/components/responses/JobAccepted'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+  /command/environment_plan_run:
+    post:
+      tags: [Commands]
+      summary: Run a plan in an environment
+      description: Executes a Puppet plan within a specified environment.
+      operationId: commandEnvironmentPlanRun
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommandRequest'
+      responses:
+        "202":
+          $ref: '#/components/responses/JobAccepted'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+  /command/stop:
+    post:
+      tags: [Commands]
+      summary: Stop a job
+      description: Halts a currently executing orchestrator job.
+      operationId: commandStop
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [job]
+              properties:
+                job:
+                  type: string
+                  description: Job identifier to stop.
+      responses:
+        "202":
+          description: Stop accepted.
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+  /command/stop_plan:
+    post:
+      tags: [Commands]
+      summary: Stop a plan job
+      description: Halts a currently executing plan job.
+      operationId: commandStopPlan
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [plan_job]
+              properties:
+                plan_job:
+                  type: string
+                  description: Plan job identifier to stop.
+      responses:
+        "202":
+          description: Stop accepted.
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+  /jobs:
+    get:
+      tags: [Jobs]
+      summary: List jobs
+      description: Retrieves details about all known orchestrator jobs.
+      operationId: listJobs
+      responses:
+        "200":
+          description: Collection of jobs.
+          content:
+            application/json:
+              schema:
+                type: object
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+  /jobs/{job_id}:
+    get:
+      tags: [Jobs]
+      summary: Get a job
+      description: Retrieves details about a specific job.
+      operationId: getJob
+      parameters:
+        - $ref: '#/components/parameters/JobId'
+      responses:
+        "200":
+          description: Job details.
+          content:
+            application/json:
+              schema:
+                type: object
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "404":
+          description: Job not found.
+  /jobs/{job_id}/nodes:
+    get:
+      tags: [Jobs]
+      summary: List nodes for a job
+      description: Retrieves information about the nodes associated with a specific job.
+      operationId: getJobNodes
+      parameters:
+        - $ref: '#/components/parameters/JobId'
+      responses:
+        "200":
+          description: Nodes for the job.
+          content:
+            application/json:
+              schema:
+                type: object
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+  /jobs/{job_id}/report:
+    get:
+      tags: [Jobs]
+      summary: Job summary report
+      description: Retrieves a summary report for the specified job.
+      operationId: getJobReport
+      parameters:
+        - $ref: '#/components/parameters/JobId'
+      responses:
+        "200":
+          description: Job report.
+          content:
+            application/json:
+              schema:
+                type: object
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+  /jobs/{job_id}/events:
+    get:
+      tags: [Jobs]
+      summary: Job events
+      description: Retrieves a list of events that occurred during the specified job.
+      operationId: getJobEvents
+      parameters:
+        - $ref: '#/components/parameters/JobId'
+      responses:
+        "200":
+          description: Event list.
+          content:
+            application/json:
+              schema:
+                type: object
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+components:
+  securitySchemes:
+    rbacToken:
+      type: apiKey
+      in: header
+      name: X-Authentication
+      description: |
+        Puppet Enterprise RBAC user authentication token. May be retrieved via
+        `puppet-access show`. Required on every request.
+  parameters:
+    JobId:
+      name: job_id
+      in: path
+      required: true
+      description: Orchestrator job identifier.
+      schema:
+        type: string
+  responses:
+    JobAccepted:
+      description: Command accepted; a job has been queued.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              job:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: URI of the created job.
+                  name:
+                    type: string
+    Unauthorized:
+      description: Missing or invalid RBAC token.
+  schemas:
+    CommandRequest:
+      type: object
+      description: Generic orchestrator command request body. The exact shape varies per command (environment, scope, task, plan_name, parameters, etc.).
+      additionalProperties: true
+      properties:
+        environment:
+          type: string
+          description: Puppet environment.
+        scope:
+          type: object
+          description: Selection of target nodes.
+          additionalProperties: true
+        description:
+          type: string

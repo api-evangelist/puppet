@@ -1,0 +1,16 @@
+{
+  "provider": "puppet",
+  "sources": [
+    "puppet-commands-api-openapi.yml",
+    "puppet-jobs-api-openapi.yml"
+  ],
+  "outputs": [
+    "puppet-commands-api-openapi.yml",
+    "puppet-jobs-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
