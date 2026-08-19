@@ -1,0 +1,1224 @@
+{
+  "item": [
+    {
+      "id": "57426a59-1eaa-4b7a-9998-1d61749873ff",
+      "name": "Commands",
+      "description": {
+        "content": "POST endpoints that trigger orchestrator actions.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "68c54400-8ff0-428a-a89d-d6c3d628ee01",
+          "name": "Run Puppet on demand",
+          "request": {
+            "name": "Run Puppet on demand",
+            "description": {
+              "content": "Executes a Puppet run on the specified scope of nodes.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "command",
+                "deploy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "DNS name of the PE primary server.",
+                  "type": "any",
+                  "value": "{{pe_host}}",
+                  "key": "pe_host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"environment\": \"<string>\",\n  \"scope\": {\n    \"key_0\": 7385,\n    \"key_1\": 4162.468127667997,\n    \"key_2\": 3560.711478210745,\n    \"key_3\": 6072\n  },\n  \"description\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "559baa02-3050-48fa-a62a-542f0eebb331",
+              "name": "Command accepted; a job has been queued.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "command",
+                    "deploy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "DNS name of the PE primary server.",
+                      "type": "any",
+                      "value": "{{pe_host}}",
+                      "key": "pe_host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Authentication",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"environment\": \"<string>\",\n  \"scope\": {\n    \"key_0\": 4769.2126532664315,\n    \"key_1\": 6273\n  },\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"job\": {\n    \"id\": \"string\",\n    \"name\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fbeac9cb-e4ae-4259-8e18-4bd358326fc2",
+              "name": "Missing or invalid RBAC token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "command",
+                    "deploy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "DNS name of the PE primary server.",
+                      "type": "any",
+                      "value": "{{pe_host}}",
+                      "key": "pe_host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Authentication",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"environment\": \"<string>\",\n  \"scope\": {\n    \"key_0\": 4769.2126532664315,\n    \"key_1\": 6273\n  },\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fd9c024f-6fed-4c60-81ad-b835b7e67a8a",
+          "name": "Run a task",
+          "request": {
+            "name": "Run a task",
+            "description": {
+              "content": "Executes a Puppet task across the specified nodes.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "command",
+                "task"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "DNS name of the PE primary server.",
+                  "type": "any",
+                  "value": "{{pe_host}}",
+                  "key": "pe_host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"environment\": \"<string>\",\n  \"scope\": {\n    \"key_0\": 7385,\n    \"key_1\": 4162.468127667997,\n    \"key_2\": 3560.711478210745,\n    \"key_3\": 6072\n  },\n  \"description\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c0abf66f-ed5b-4b75-a3b7-7b57dd4fd0d5",
+              "name": "Command accepted; a job has been queued.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "command",
+                    "task"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "DNS name of the PE primary server.",
+                      "type": "any",
+                      "value": "{{pe_host}}",
+                      "key": "pe_host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Authentication",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"environment\": \"<string>\",\n  \"scope\": {\n    \"key_0\": 4769.2126532664315,\n    \"key_1\": 6273\n  },\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"job\": {\n    \"id\": \"string\",\n    \"name\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "769728b7-52cb-4d67-82e4-787a9609acd6",
+              "name": "Missing or invalid RBAC token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "command",
+                    "task"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "DNS name of the PE primary server.",
+                      "type": "any",
+                      "value": "{{pe_host}}",
+                      "key": "pe_host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Authentication",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"environment\": \"<string>\",\n  \"scope\": {\n    \"key_0\": 4769.2126532664315,\n    \"key_1\": 6273\n  },\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "30abb35e-50b0-4921-911b-c511c9d81fe5",
+          "name": "Create a task target",
+          "request": {
+            "name": "Create a task target",
+            "description": {
+              "content": "Defines a task and node/group target combination for privilege-escalated execution.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "command",
+                "task_target"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "DNS name of the PE primary server.",
+                  "type": "any",
+                  "value": "{{pe_host}}",
+                  "key": "pe_host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"environment\": \"<string>\",\n  \"scope\": {\n    \"key_0\": 7385,\n    \"key_1\": 4162.468127667997,\n    \"key_2\": 3560.711478210745,\n    \"key_3\": 6072\n  },\n  \"description\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5b57a42e-5719-4bc8-a832-a973557819c1",
+              "name": "Task target created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "command",
+                    "task_target"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "DNS name of the PE primary server.",
+                      "type": "any",
+                      "value": "{{pe_host}}",
+                      "key": "pe_host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Authentication",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"environment\": \"<string>\",\n  \"scope\": {\n    \"key_0\": 4769.2126532664315,\n    \"key_1\": 6273\n  },\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7bcab27f-af0a-400e-bb0c-734048f9319c",
+              "name": "Missing or invalid RBAC token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "command",
+                    "task_target"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "DNS name of the PE primary server.",
+                      "type": "any",
+                      "value": "{{pe_host}}",
+                      "key": "pe_host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Authentication",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"environment\": \"<string>\",\n  \"scope\": {\n    \"key_0\": 4769.2126532664315,\n    \"key_1\": 6273\n  },\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b2b51d17-d2a8-46d9-9299-fb997ec4e7da",
+          "name": "Run a plan",
+          "request": {
+            "name": "Run a plan",
+            "description": {
+              "content": "Executes a Puppet plan.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "command",
+                "plan_run"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "DNS name of the PE primary server.",
+                  "type": "any",
+                  "value": "{{pe_host}}",
+                  "key": "pe_host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"environment\": \"<string>\",\n  \"scope\": {\n    \"key_0\": 7385,\n    \"key_1\": 4162.468127667997,\n    \"key_2\": 3560.711478210745,\n    \"key_3\": 6072\n  },\n  \"description\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ef1fb88f-6a52-45b1-a6ca-41dd287bc031",
+              "name": "Command accepted; a job has been queued.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "command",
+                    "plan_run"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "DNS name of the PE primary server.",
+                      "type": "any",
+                      "value": "{{pe_host}}",
+                      "key": "pe_host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Authentication",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"environment\": \"<string>\",\n  \"scope\": {\n    \"key_0\": 4769.2126532664315,\n    \"key_1\": 6273\n  },\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"job\": {\n    \"id\": \"string\",\n    \"name\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ada8c707-769b-448e-8e0a-6cdf1a51841f",
+              "name": "Missing or invalid RBAC token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "command",
+                    "plan_run"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "DNS name of the PE primary server.",
+                      "type": "any",
+                      "value": "{{pe_host}}",
+                      "key": "pe_host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Authentication",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"environment\": \"<string>\",\n  \"scope\": {\n    \"key_0\": 4769.2126532664315,\n    \"key_1\": 6273\n  },\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "163aa5de-fc4d-4b3e-98f1-1de168bcba46",
+          "name": "Run a plan in an environment",
+          "request": {
+            "name": "Run a plan in an environment",
+            "description": {
+              "content": "Executes a Puppet plan within a specified environment.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "command",
+                "environment_plan_run"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "DNS name of the PE primary server.",
+                  "type": "any",
+                  "value": "{{pe_host}}",
+                  "key": "pe_host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"environment\": \"<string>\",\n  \"scope\": {\n    \"key_0\": 7385,\n    \"key_1\": 4162.468127667997,\n    \"key_2\": 3560.711478210745,\n    \"key_3\": 6072\n  },\n  \"description\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "66a4c4d9-37b3-408d-8c6a-ae0fe4397ebb",
+              "name": "Command accepted; a job has been queued.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "command",
+                    "environment_plan_run"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "DNS name of the PE primary server.",
+                      "type": "any",
+                      "value": "{{pe_host}}",
+                      "key": "pe_host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Authentication",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"environment\": \"<string>\",\n  \"scope\": {\n    \"key_0\": 4769.2126532664315,\n    \"key_1\": 6273\n  },\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"job\": {\n    \"id\": \"string\",\n    \"name\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "efce5f30-5d7c-4ab1-baf4-15dda9e5f24a",
+              "name": "Missing or invalid RBAC token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "command",
+                    "environment_plan_run"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "DNS name of the PE primary server.",
+                      "type": "any",
+                      "value": "{{pe_host}}",
+                      "key": "pe_host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Authentication",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"environment\": \"<string>\",\n  \"scope\": {\n    \"key_0\": 4769.2126532664315,\n    \"key_1\": 6273\n  },\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5322528e-ec07-4929-b5b4-f3aeb7c4d2f3",
+          "name": "Stop a job",
+          "request": {
+            "name": "Stop a job",
+            "description": {
+              "content": "Halts a currently executing orchestrator job.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "command",
+                "stop"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "DNS name of the PE primary server.",
+                  "type": "any",
+                  "value": "{{pe_host}}",
+                  "key": "pe_host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"job\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ffe918cd-e884-4064-88fc-18c3dba4a1ed",
+              "name": "Stop accepted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "command",
+                    "stop"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "DNS name of the PE primary server.",
+                      "type": "any",
+                      "value": "{{pe_host}}",
+                      "key": "pe_host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Authentication",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"job\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9d65d157-1bab-4f17-8fa2-045b34be804e",
+              "name": "Missing or invalid RBAC token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "command",
+                    "stop"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "DNS name of the PE primary server.",
+                      "type": "any",
+                      "value": "{{pe_host}}",
+                      "key": "pe_host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Authentication",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"job\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "db970390-e975-4327-bd70-30cfa557e3c8",
+          "name": "Stop a plan job",
+          "request": {
+            "name": "Stop a plan job",
+            "description": {
+              "content": "Halts a currently executing plan job.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "command",
+                "stop_plan"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "DNS name of the PE primary server.",
+                  "type": "any",
+                  "value": "{{pe_host}}",
+                  "key": "pe_host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"plan_job\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "13af962d-f84c-4a51-94c0-fa4c49eef97d",
+              "name": "Stop accepted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "command",
+                    "stop_plan"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "DNS name of the PE primary server.",
+                      "type": "any",
+                      "value": "{{pe_host}}",
+                      "key": "pe_host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Authentication",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"plan_job\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e1361630-d81b-447e-a769-08234c8667d8",
+              "name": "Missing or invalid RBAC token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "command",
+                    "stop_plan"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "DNS name of the PE primary server.",
+                      "type": "any",
+                      "value": "{{pe_host}}",
+                      "key": "pe_host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Authentication",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"plan_job\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "DNS name of the PE primary server.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "pe-master.example.com",
+      "key": "pe_host"
+    },
+    {
+      "type": "string",
+      "value": "https://{{pe_host}}:8143/orchestrator/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-Authentication"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d7f8a826-b771-43d4-8c47-c3a9667a5eca",
+    "name": "Puppet Enterprise Orchestrator Commands API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Puppet Enterprise Orchestrator API enables programmatic management of\norchestrator jobs, tasks, plans, and on-demand Puppet runs across the\nPE-managed estate. Requests use HTTPS on port 8143 and authenticate with a\nPE RBAC user token supplied via the `X-Authentication` header.\n\n\nContact Support:\n Name: Puppet Enterprise",
+      "type": "text/plain"
+    }
+  }
+}

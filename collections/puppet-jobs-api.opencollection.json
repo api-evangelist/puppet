@@ -1,0 +1,113 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Puppet Enterprise Orchestrator Commands Jobs API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Authentication",
+      "value": "{{X-Authentication}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Jobs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{pe_host}:8143/orchestrator/v1/jobs"
+          },
+          "docs": "Retrieves details about all known orchestrator jobs."
+        },
+        {
+          "info": {
+            "name": "Get a job",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{pe_host}:8143/orchestrator/v1/jobs/:job_id",
+            "params": [
+              {
+                "name": "job_id",
+                "value": "",
+                "type": "path",
+                "description": "Orchestrator job identifier."
+              }
+            ]
+          },
+          "docs": "Retrieves details about a specific job."
+        },
+        {
+          "info": {
+            "name": "List nodes for a job",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{pe_host}:8143/orchestrator/v1/jobs/:job_id/nodes",
+            "params": [
+              {
+                "name": "job_id",
+                "value": "",
+                "type": "path",
+                "description": "Orchestrator job identifier."
+              }
+            ]
+          },
+          "docs": "Retrieves information about the nodes associated with a specific job."
+        },
+        {
+          "info": {
+            "name": "Job summary report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{pe_host}:8143/orchestrator/v1/jobs/:job_id/report",
+            "params": [
+              {
+                "name": "job_id",
+                "value": "",
+                "type": "path",
+                "description": "Orchestrator job identifier."
+              }
+            ]
+          },
+          "docs": "Retrieves a summary report for the specified job."
+        },
+        {
+          "info": {
+            "name": "Job events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{pe_host}:8143/orchestrator/v1/jobs/:job_id/events",
+            "params": [
+              {
+                "name": "job_id",
+                "value": "",
+                "type": "path",
+                "description": "Orchestrator job identifier."
+              }
+            ]
+          },
+          "docs": "Retrieves a list of events that occurred during the specified job."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
