@@ -44,6 +44,9 @@ apis:
   humanURL: https://help.puppet.com/pe/2025.10/topics/orchestrator_api.htm
   tags:
   - Orchestration
+  - Task
+  tags_raw:
+  - Orchestration
   - Tasks
   properties:
   - type: Documentation
@@ -56,6 +59,10 @@ apis:
     admin.
   humanURL: https://help.puppet.com/pe/2025.10/topics/rbac_service_api_v1.htm
   tags:
+  - RBAC
+  - Authentication
+  - User
+  tags_raw:
   - RBAC
   - Authentication
   - Users
@@ -83,6 +90,10 @@ apis:
     code, enabling Git-driven control of Puppet environments.
   humanURL: https://help.puppet.com/pe/2025.10/topics/code_mgr_api.htm
   tags:
+  - Code
+  - Deployment
+  - Webhook
+  tags_raw:
   - Code
   - Deployment
   - Webhooks
@@ -158,6 +169,8 @@ apis:
   description: GET endpoints that return information about known orchestrator jobs.
   humanURL: https://help.puppet.com/pe/2025.10/topics/orchestrator_api.htm
   tags:
+  - Job
+  tags_raw:
   - Jobs
   properties:
   - type: OpenAPI
