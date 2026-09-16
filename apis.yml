@@ -49,7 +49,8 @@ specificationVersion: '0.23'
 apis:
 - aid: puppet:orchestrator
   name: Puppet Enterprise Orchestrator API
-  description: The Orchestrator API enables you to gather details about orchestrator jobs you run and inspect application
+  description: >-
+    The Orchestrator API enables you to gather details about orchestrator jobs you run and inspect application
     instances. It powers running tasks and orchestration workflows across PE-managed nodes.
   humanURL: https://help.puppet.com/pe/2025.10/topics/orchestrator_api.htm
   tags:
@@ -63,8 +64,10 @@ apis:
     url: https://help.puppet.com/pe/2025.10/topics/orchestrator_api.htm
 - aid: puppet:rbac
   name: Puppet Enterprise RBAC Service API
-  description: The RBAC Service API manages access to PE, generates authentication tokens, and provides user, role,
-    group, and permission management. v2 adds user retrieval with filters, token revocation, and LDAP admin.
+  description: >-
+    The RBAC Service API manages access to PE, generates authentication tokens, and provides user, role,
+    group, and permission management. v2 adds user retrieval with filters, token revocation, and LDAP
+    admin.
   humanURL: https://help.puppet.com/pe/2025.10/topics/rbac_service_api_v1.htm
   tags:
   - RBAC
@@ -81,7 +84,8 @@ apis:
     url: https://help.puppet.com/pe/2025.10/topics/rbac_service_api_v2.htm
 - aid: puppet:node-classifier
   name: Puppet Enterprise Node Classifier Service API
-  description: The Node Classifier API enables querying node group matches, assigned classes and parameters, and
+  description: >-
+    The Node Classifier API enables querying node group matches, assigned classes and parameters, and
     environment assignments. Used to manage how nodes are classified and configured.
   humanURL: https://help.puppet.com/pe/2025.10/topics/classifier_api.htm
   tags:
@@ -92,7 +96,8 @@ apis:
     url: https://help.puppet.com/pe/2025.10/topics/classifier_api.htm
 - aid: puppet:code-manager
   name: Puppet Enterprise Code Manager API
-  description: The Code Manager API supports webhook creation, deployment queueing, and status monitoring for Puppet
+  description: >-
+    The Code Manager API supports webhook creation, deployment queueing, and status monitoring for Puppet
     code, enabling Git-driven control of Puppet environments.
   humanURL: https://help.puppet.com/pe/2025.10/topics/code_mgr_api.htm
   tags:
@@ -108,7 +113,8 @@ apis:
     url: https://help.puppet.com/pe/2025.10/topics/code_mgr_api.htm
 - aid: puppet:activity
   name: Puppet Enterprise Activity Service API
-  description: The Activity Service API queries PE service and user events logged by the activity service, supporting
+  description: >-
+    The Activity Service API queries PE service and user events logged by the activity service, supporting
     audit and operational visibility.
   humanURL: https://help.puppet.com/pe/2025.10/topics/activity_api.htm
   tags:
@@ -129,7 +135,8 @@ apis:
     url: https://help.puppet.com/pe/2025.10/topics/status_api.htm
 - aid: puppet:inventory
   name: Puppet Enterprise Node Inventory API
-  description: The Node Inventory API manages inventory service database operations including connection entries
+  description: >-
+    The Node Inventory API manages inventory service database operations including connection entries
     and listings.
   humanURL: https://help.puppet.com/pe/2025.10/topics/inventory_api.htm
   tags:
@@ -150,7 +157,8 @@ apis:
     url: https://help.puppet.com/pe/2025.10/topics/value_api.htm
 - aid: puppet:forge
   name: Puppet Forge
-  description: Puppet Forge is the public module repository providing thousands of downloadable Puppet modules.
+  description: >-
+    Puppet Forge is the public module repository providing thousands of downloadable Puppet modules.
   humanURL: https://forge.puppet.com/
   tags:
   - Modules
@@ -178,94 +186,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/puppet-jobs-api-openapi.yml
-- aid: puppet:puppet-labs-module-operations-api
-  name: Puppet Module Operations API
-  description: The Module Operations API from Puppet — 2 operation(s) for module operations.
-  humanURL: https://forgeapi.puppet.com/
-  baseURL: https://forgeapi.puppet.com
-  tags:
-  - Module Operations
-  properties:
-  - type: OpenAPI
-    url: openapi/puppet-labs-module-operations-api-openapi.yml
-  - type: Authentication
-    url: authentication/puppet-labs-authentication.yml
-  - type: ErrorCatalog
-    url: errors/puppet-labs-problem-types.yml
-  - type: Conventions
-    url: conventions/puppet-labs-conventions.yml
-  - type: DataModel
-    url: data-model/puppet-labs-data-model.yml
-  - type: Conformance
-    url: conformance/puppet-labs-conformance.yml
-  - type: Lifecycle
-    url: lifecycle/puppet-labs-lifecycle.yml
-- aid: puppet:puppet-labs-release-operations-api
-  name: Puppet Release Operations API
-  description: The Release Operations API from Puppet — 5 operation(s) for release operations.
-  humanURL: https://forgeapi.puppet.com/
-  baseURL: https://forgeapi.puppet.com
-  tags:
-  - Release Operations
-  properties:
-  - type: OpenAPI
-    url: openapi/puppet-labs-release-operations-api-openapi.yml
-  - type: Authentication
-    url: authentication/puppet-labs-authentication.yml
-  - type: ErrorCatalog
-    url: errors/puppet-labs-problem-types.yml
-  - type: Conventions
-    url: conventions/puppet-labs-conventions.yml
-  - type: DataModel
-    url: data-model/puppet-labs-data-model.yml
-  - type: Conformance
-    url: conformance/puppet-labs-conformance.yml
-  - type: Lifecycle
-    url: lifecycle/puppet-labs-lifecycle.yml
-- aid: puppet:puppet-labs-search-filter-operations-api
-  name: Puppet Search Filter Operations API
-  description: The Search Filter Operations API from Puppet — 2 operation(s) for search filter operations.
-  humanURL: https://forgeapi.puppet.com/
-  baseURL: https://forgeapi.puppet.com
-  tags:
-  - Search Filter Operations
-  properties:
-  - type: OpenAPI
-    url: openapi/puppet-labs-search-filter-operations-api-openapi.yml
-  - type: Authentication
-    url: authentication/puppet-labs-authentication.yml
-  - type: ErrorCatalog
-    url: errors/puppet-labs-problem-types.yml
-  - type: Conventions
-    url: conventions/puppet-labs-conventions.yml
-  - type: DataModel
-    url: data-model/puppet-labs-data-model.yml
-  - type: Conformance
-    url: conformance/puppet-labs-conformance.yml
-  - type: Lifecycle
-    url: lifecycle/puppet-labs-lifecycle.yml
-- aid: puppet:puppet-labs-user-operations-api
-  name: Puppet User Operations API
-  description: The User Operations API from Puppet — 2 operation(s) for user operations.
-  humanURL: https://forgeapi.puppet.com/
-  baseURL: https://forgeapi.puppet.com
-  tags:
-  - User Operations
-  properties:
-  - type: OpenAPI
-    url: openapi/puppet-labs-user-operations-api-openapi.yml
-  - type: Authentication
-    url: authentication/puppet-labs-authentication.yml
-  - type: ErrorCatalog
-    url: errors/puppet-labs-problem-types.yml
-  - type: Conventions
-    url: conventions/puppet-labs-conventions.yml
-  - type: DataModel
-    url: data-model/puppet-labs-data-model.yml
-  - type: Conformance
-    url: conformance/puppet-labs-conformance.yml
-  - type: Lifecycle
-    url: lifecycle/puppet-labs-lifecycle.yml
 common:
 - type: AgenticAccess
   url: agentic-access/puppet-agentic-access.yml
