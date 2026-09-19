@@ -90,6 +90,9 @@ apis:
   humanURL: https://help.puppet.com/pe/2025.10/topics/classifier_api.htm
   tags:
   - Classification
+  - Node
+  tags_raw:
+  - Classification
   - Nodes
   properties:
   - type: Documentation
@@ -140,6 +143,9 @@ apis:
     and listings.
   humanURL: https://help.puppet.com/pe/2025.10/topics/inventory_api.htm
   tags:
+  - Inventory
+  - Node
+  tags_raw:
   - Inventory
   - Nodes
   properties:
