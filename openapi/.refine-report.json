@@ -1,8 +1,7 @@
 {
   "provider": "puppet",
   "sources": [
-    "puppet-commands-api-openapi.yml",
-    "puppet-jobs-api-openapi.yml"
+    "_original/puppet-openapi.yml"
   ],
   "outputs": [
     "puppet-commands-api-openapi.yml",
@@ -11,6 +10,13 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "puppet-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "puppet-commands-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "puppet-jobs-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

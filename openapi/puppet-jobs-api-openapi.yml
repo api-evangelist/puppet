@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Puppet Enterprise Orchestrator Commands Jobs API
+  title: Puppet Enterprise Orchestrator Jobs API
   version: v1
   description: 'The Puppet Enterprise Orchestrator API enables programmatic management of
 
@@ -8,9 +8,7 @@ info:
 
     PE-managed estate. Requests use HTTPS on port 8143 and authenticate with a
 
-    PE RBAC user token supplied via the `X-Authentication` header.
-
-    '
+    PE RBAC user token supplied via the `X-Authentication` header.'
   contact:
     name: Puppet Enterprise
     url: https://help.puppet.com/pe/2025.10/
@@ -118,9 +116,6 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
 components:
-  responses:
-    Unauthorized:
-      description: Missing or invalid RBAC token.
   parameters:
     JobId:
       name: job_id
@@ -129,6 +124,9 @@ components:
       description: Orchestrator job identifier.
       schema:
         type: string
+  responses:
+    Unauthorized:
+      description: Missing or invalid RBAC token.
   securitySchemes:
     rbacToken:
       type: apiKey

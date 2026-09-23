@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Puppet Enterprise Orchestrator Commands API
   version: v1
@@ -8,9 +8,7 @@ info:
 
     PE-managed estate. Requests use HTTPS on port 8143 and authenticate with a
 
-    PE RBAC user token supplied via the `X-Authentication` header.
-
-    '
+    PE RBAC user token supplied via the `X-Authentication` header.'
   contact:
     name: Puppet Enterprise
     url: https://help.puppet.com/pe/2025.10/
@@ -167,8 +165,6 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   responses:
-    Unauthorized:
-      description: Missing or invalid RBAC token.
     JobAccepted:
       description: Command accepted; a job has been queued.
       content:
@@ -184,6 +180,8 @@ components:
                     description: URI of the created job.
                   name:
                     type: string
+    Unauthorized:
+      description: Missing or invalid RBAC token.
   schemas:
     CommandRequest:
       type: object
