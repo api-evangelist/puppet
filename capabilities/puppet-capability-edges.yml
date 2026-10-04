@@ -1,0 +1,34 @@
+slug: puppet
+provider: Puppet
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Commands
+  spec_file: puppet-commands-api-openapi.yml
+  capability_id: BC-600.40
+  capability_id_l1: BC-600
+  capability_name: IT Operations Management
+  confidence: 0.8
+  evidence: POST /command/deploy  commandDeploy  Run Puppet on demand; POST /command/task  commandTask  Run
+    a task
+  reason: Orchestrator commands trigger configuration-management runs, tasks and plans across the managed
+    node estate — day-to-day IT operations automation.
+- tag: Jobs
+  spec_file: puppet-jobs-api-openapi.yml
+  capability_id: BC-600.40
+  capability_id_l1: BC-600
+  capability_name: IT Operations Management
+  confidence: 0.75
+  evidence: GET /jobs  listJobs  List jobs; GET /jobs/{job_id}/report  Job summary report
+  reason: Tracking and reporting of orchestration jobs/node runs across infrastructure — IT operations
+    monitoring and automation. Sub-capability choice somewhat uncertain vs IT Service Management.

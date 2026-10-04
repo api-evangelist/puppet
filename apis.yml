@@ -193,6 +193,9 @@ apis:
   - type: OpenAPI
     url: openapi/puppet-jobs-api-openapi.yml
 common:
+- type: CapabilityMap
+  url: capabilities/puppet-capability-edges.yml
+  name: Puppet Business Capability Map
 - type: AgenticAccess
   url: agentic-access/puppet-agentic-access.yml
 - type: VulnerabilityDisclosure
