@@ -1,4 +1,4 @@
-# Puppet (puppet)
+# Puppet
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,201 +66,132 @@
 
 Puppet provides infrastructure automation and configuration management for hybrid and cloud environments. Puppet Enterprise exposes a collection of service APIs (Orchestrator, RBAC, Node Classifier, Code Manager, Activity, Status, Inventory, Value) that enable programmatic management of nodes, users, classifications, code deployments, and operational events.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/puppet/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/puppet/refs/heads/main/apis.yml)
+**Areas:** Automation · Configuration Management · DevOps · Enterprise · Infrastructure as Code · Orchestration · RBAC
 
-## Scope
+## Puppet on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for Puppet is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/puppet/](https://apis.io/providers/puppet/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (11)
 
-- Automation
-- Configuration Management
-- DevOps
-- Enterprise
-- Infrastructure as Code
-- Orchestration
-- RBAC
+- [Puppet Enterprise Orchestrator API](https://apis.io/apis/puppet/orchestrator/) — The Orchestrator API enables you to gather details about orchestrator jobs you run and inspect application instances. It powers running tasks and…
+- [Puppet Enterprise RBAC Service API](https://apis.io/apis/puppet/rbac/) — The RBAC Service API manages access to PE, generates authentication tokens, and provides user, role, group, and permission management. v2 adds user…
+- [Puppet Enterprise Node Classifier Service API](https://apis.io/apis/puppet/node-classifier/) — The Node Classifier API enables querying node group matches, assigned classes and parameters, and environment assignments. Used to manage how nodes are…
+- [Puppet Enterprise Code Manager API](https://apis.io/apis/puppet/code-manager/) — The Code Manager API supports webhook creation, deployment queueing, and status monitoring for Puppet code, enabling Git-driven control of Puppet environments.
+- [Puppet Enterprise Activity Service API](https://apis.io/apis/puppet/activity/) — The Activity Service API queries PE service and user events logged by the activity service, supporting audit and operational visibility.
+- [Puppet Enterprise Status API](https://apis.io/apis/puppet/status/) — The Status API checks the health status of PE services.
+- [Puppet Enterprise Node Inventory API](https://apis.io/apis/puppet/inventory/) — The Node Inventory API manages inventory service database operations including connection entries and listings.
+- [Puppet Enterprise Value API](https://apis.io/apis/puppet/value/) — The Value API generates automation impact reports on time and cost savings.
+- [Puppet Forge](https://apis.io/apis/puppet/forge/) — Puppet Forge is the public module repository providing thousands of downloadable Puppet modules.
+- [Puppet Commands API](https://apis.io/apis/puppet/puppet-commands-api/) — POST endpoints that trigger orchestrator actions.
+- [Puppet Jobs API](https://apis.io/apis/puppet/puppet-jobs-api/) — GET endpoints that return information about known orchestrator jobs.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2025-02-24
-- **Modified:** 2026-04-28
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Puppet Enterprise Orchestrator API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Orchestrator API enables you to gather details about orchestrator jobs you run and inspect application instances. It powers running tasks and orchestration workflows across PE-managed nodes.
+- [Puppet Agentic Access](https://apis.io/agentic-access/puppet/puppet-agentic-access/)
 
-- **Human URL:** [https://help.puppet.com/pe/2025.10/topics/orchestrator_api.htm](https://help.puppet.com/pe/2025.10/topics/orchestrator_api.htm)
+#### Collections (3)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Orchestration
-- Tasks
+- [Puppet Enterprise Orchestrator API](https://apis.io/collections/puppet/open-puppet/)
+- [Puppet Enterprise Orchestrator Commands API](https://apis.io/collections/puppet/open-puppet-commands-api/)
+- [Puppet Enterprise Orchestrator Commands Jobs API](https://apis.io/collections/puppet/open-puppet-jobs-api/)
 
-#### Properties
+#### Security (3)
 
-- [Documentation](https://help.puppet.com/pe/2025.10/topics/orchestrator_api.htm)
-- [Postman Collection](collections/puppet.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/puppet.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-### Puppet Enterprise RBAC Service API
+- [Puppet Authentication](https://apis.io/security/puppet/puppet-authentication/)
+- [Puppet Domain Security](https://apis.io/security/puppet/puppet-domain-security/)
+- [Puppet Vulnerability Disclosure](https://apis.io/security/puppet/puppet-vulnerability-disclosure/)
 
-The RBAC Service API manages access to PE, generates authentication tokens, and provides user, role, group, and permission management. v2 adds user retrieval with filters, token revocation, and LDAP admin.
+#### Plans and pricing (1)
 
-- **Human URL:** [https://help.puppet.com/pe/2025.10/topics/rbac_service_api_v1.htm](https://help.puppet.com/pe/2025.10/topics/rbac_service_api_v1.htm)
+Published plans, tiers and prices.
 
-#### Tags
+- [Puppet Plans Pricing](https://apis.io/plans/puppet/puppet-plans-pricing/)
 
-- RBAC
-- Authentication
-- Users
+#### Rate limits (1)
 
-#### Properties
+Published request limits.
 
-- [Documentation](https://help.puppet.com/pe/2025.10/topics/rbac_service_api_v1.htm)
-- [Documentation](https://help.puppet.com/pe/2025.10/topics/rbac_service_api_v2.htm)
-- [Postman Collection](collections/puppet.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/puppet.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Puppet Rate Limits](https://apis.io/rate-limits/puppet/puppet-rate-limits/)
 
-### Puppet Enterprise Node Classifier Service API
+#### FinOps (1)
 
-The Node Classifier API enables querying node group matches, assigned classes and parameters, and environment assignments. Used to manage how nodes are classified and configured.
+What the API costs to run, by operation.
 
-- **Human URL:** [https://help.puppet.com/pe/2025.10/topics/classifier_api.htm](https://help.puppet.com/pe/2025.10/topics/classifier_api.htm)
+- [Puppet Finops](https://apis.io/finops/puppet/puppet-finops/)
 
-#### Tags
+## Where to find this API
 
-- Classification
-- Nodes
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-#### Properties
-
-- [Documentation](https://help.puppet.com/pe/2025.10/topics/classifier_api.htm)
-- [Postman Collection](collections/puppet.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/puppet.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Puppet Enterprise Code Manager API
-
-The Code Manager API supports webhook creation, deployment queueing, and status monitoring for Puppet code, enabling Git-driven control of Puppet environments.
-
-- **Human URL:** [https://help.puppet.com/pe/2025.10/topics/code_mgr_api.htm](https://help.puppet.com/pe/2025.10/topics/code_mgr_api.htm)
-
-#### Tags
-
-- Code
-- Deployment
-- Webhooks
-
-#### Properties
-
-- [Documentation](https://help.puppet.com/pe/2025.10/topics/code_mgr_api.htm)
-- [Postman Collection](collections/puppet.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/puppet.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Puppet Enterprise Activity Service API
-
-The Activity Service API queries PE service and user events logged by the activity service, supporting audit and operational visibility.
-
-- **Human URL:** [https://help.puppet.com/pe/2025.10/topics/activity_api.htm](https://help.puppet.com/pe/2025.10/topics/activity_api.htm)
-
-#### Tags
-
-- Activity
-- Audit
-
-#### Properties
-
-- [Documentation](https://help.puppet.com/pe/2025.10/topics/activity_api.htm)
-- [Postman Collection](collections/puppet.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/puppet.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Puppet Enterprise Status API
-
-The Status API checks the health status of PE services.
-
-- **Human URL:** [https://help.puppet.com/pe/2025.10/topics/status_api.htm](https://help.puppet.com/pe/2025.10/topics/status_api.htm)
-
-#### Tags
-
-- Health
-- Monitoring
-
-#### Properties
-
-- [Documentation](https://help.puppet.com/pe/2025.10/topics/status_api.htm)
-- [Postman Collection](collections/puppet.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/puppet.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Puppet Enterprise Node Inventory API
-
-The Node Inventory API manages inventory service database operations including connection entries and listings.
-
-- **Human URL:** [https://help.puppet.com/pe/2025.10/topics/inventory_api.htm](https://help.puppet.com/pe/2025.10/topics/inventory_api.htm)
-
-#### Tags
-
-- Inventory
-- Nodes
-
-#### Properties
-
-- [Documentation](https://help.puppet.com/pe/2025.10/topics/inventory_api.htm)
-- [Postman Collection](collections/puppet.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/puppet.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Puppet Enterprise Value API
-
-The Value API generates automation impact reports on time and cost savings.
-
-- **Human URL:** [https://help.puppet.com/pe/2025.10/topics/value_api.htm](https://help.puppet.com/pe/2025.10/topics/value_api.htm)
-
-#### Tags
-
-- Reports
-- Analytics
-
-#### Properties
-
-- [Documentation](https://help.puppet.com/pe/2025.10/topics/value_api.htm)
-- [Postman Collection](collections/puppet.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/puppet.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Puppet Forge
-
-Puppet Forge is the public module repository providing thousands of downloadable Puppet modules.
-
-- **Human URL:** [https://forge.puppet.com/](https://forge.puppet.com/)
-
-#### Tags
-
-- Modules
-- Registry
-
-#### Properties
-
-- [Website](https://forge.puppet.com/)
-- [Postman Collection](collections/puppet.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/puppet.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [LinkedIn](https://www.linkedin.com/company/puppet)
 - [Website](https://www.puppet.com/)
 - [Documentation](https://help.puppet.com/)
-- [Blog](https://www.puppet.com/blog)
-- [GitHub Organization](https://github.com/puppetlabs)
-- [Forge](https://forge.puppet.com/)
-- [Status Page](https://status.puppet.com/)
-- [Support](https://support.puppet.com/)
+- [API reference](https://forgeapi.puppet.com/)
 - [Pricing](https://www.puppet.com/pricing)
-- [Integrations](https://www.puppet.com/integrations)
+- [Support](https://support.puppet.com/)
+- [Blog](https://www.puppet.com/blog)
+- [GitHub](https://github.com/puppetlabs)
+- [Status](https://status.puppet.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 29.8** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 48.4 |
+| Contract governance | 0.0 |
+| Operational transparency | 18.4 |
+| Developer ergonomics | 31.0 |
+| Access clarity | 18.4 |
+
+**Agent readiness 17.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 17.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/puppet/](https://apis.io/providers/puppet/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Puppet: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/puppet/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
